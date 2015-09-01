@@ -18,4 +18,12 @@ def GetArguments():
         metavar=('"Title"', '"Body"')
     )
 
+    parser.add_argument(
+        '-u', '--update-note',
+        dest="update_note",
+        nargs=3,  # Expect 3 arguments to follow; noteid, title and body
+        help='Updates an existing note',
+        metavar=('"Note ID"', '"Title"', '"Body"')
+    )
+
     return parser.parse_args()
