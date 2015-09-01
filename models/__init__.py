@@ -19,3 +19,6 @@ class Note(BaseModel):
     body = TextField()
     date_created = DateTimeField(default=datetime.utcnow())
     date_modified = DateTimeField(default=datetime.utcnow())
+
+db.connect()
+db.create_table(Note, True)
