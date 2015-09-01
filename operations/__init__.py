@@ -4,6 +4,7 @@ def print_list_of_notes():
      notes = Note.select().order_by(Note.date_created.desc())
 
      for note in notes:
+         print("Note ID: " + str(note.id))
          print(note.title)
          print(note.body)
          print(note.date_created)
