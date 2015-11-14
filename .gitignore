@@ -64,3 +64,6 @@ local_settings.py
 
 # Project specific
 badgernote.db
+
+# Vim
+*.swp
