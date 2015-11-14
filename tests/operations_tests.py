@@ -4,18 +4,13 @@ import os
 import unittest
 import operations
 
-class OperationTest(object):
+class OperationTest(unittest.TestCase):
   def setUp(self):
     operations.setup_database(test_database_name)
   def tearDown(self):
     os.remove(test_database_name) 
 
-class TestOperations(unittest.TestCase, OperationTest):
-  def setUp(self):
-    OperationTest.setUp(self)
-  def tearDown(self):
-    OperationTest.tearDown(self)
- 
+class TestOperations(OperationTest):
   def test_create_new_note(self):
     pass
 
@@ -27,5 +22,4 @@ class TestOperations(unittest.TestCase, OperationTest):
 
 if __name__ == "__main__":
   unittest.main()
-
 
