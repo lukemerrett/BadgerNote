@@ -10,6 +10,12 @@ To install the dependencies ready for use run
 
     sudo python setup.py develop
 
+## Running the tests
+
+To run all tests for the project; run the following from the root foldeer
+
+    python -m unittest
+
 ## Usage
 
 ```
@@ -24,3 +30,4 @@ optional arguments:
   -u "Note ID" "Title" "Body", --update-note "Note ID" "Title" "Body"
                         Updates an existing note
 ```
+
