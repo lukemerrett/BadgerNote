@@ -63,4 +63,4 @@ local_settings.py
 .idea/
 
 # Project specific
-BadgerNote.db
+badgernote.db

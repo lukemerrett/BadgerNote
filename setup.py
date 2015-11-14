@@ -3,7 +3,7 @@ __author__ = 'Luke Merrett'
 from setuptools import setup, find_packages
 
 setup(
-    name="BadgerNote",
+    name="badgernote",
     packages=find_packages(),
     install_requires=['peewee', 'argparse'],
     author="Luke Merrett",
