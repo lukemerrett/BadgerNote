@@ -11,9 +11,9 @@ def setup_database(database_name):
 
 def create_new_note(title, body):
   if not isinstance(title, str):
-    raise Exception("Title must be a string")
+    raise TypeError("Title must be a string")
   if not isinstance(body, str):
-    raise Exception("Body must be a string")
+    raise TypeError("Body must be a string")
 
   new_note = Note.create(
     title=title,
@@ -23,11 +23,11 @@ def create_new_note(title, body):
 
 def update_note(noteId, title, body):
   if not isinstance(noteId, str) and not isinstance(noteId, int):
-    raise Exception("Note ID must be a string or integer")
+    raise TypeError("Note ID must be a string or integer")
   if not isinstance(title, str):
-    raise Exception("Title must be a string")
+    raise TypeError("Title must be a string")
   if not isinstance(body, str):
-    raise Exception("Body must be a string")
+    raise TypeError("Body must be a string")
 
   note = Note.get(Note.id == noteId)
 
@@ -35,9 +35,12 @@ def update_note(noteId, title, body):
   note.body = body;
   note.save()
 
-def print_list_of_notes():
+def get_list_of_notes():
    notes = Note.select().order_by(Note.date_created.desc())
+   return notes
 
+def print_list_of_notes():
+   notes = get_list_of_notes()
    print_header("Current Notes")
 
    for note in notes:

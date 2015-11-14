@@ -1,16 +1,19 @@
 from peewee import *
 from datetime import datetime
 
-db = None
+# Allows us to create the database after the module has initialised
+# Makes this more unit testable
+db_proxy = Proxy()
 
 def create_database(database_name):
   db = SqliteDatabase(database_name, threadlocals=True)
+  db_proxy.initialize(db)
   db.connect()
   db.create_table(Note, True)
 
 class BaseModel(Model):
   class Meta:
-      database = db
+    database = db_proxy
 
 class Note(BaseModel):
   """
