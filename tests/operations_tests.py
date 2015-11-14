@@ -10,14 +10,16 @@ class OperationTest(unittest.TestCase):
   def tearDown(self):
     os.remove(test_database_name) 
 
-class TestOperations(OperationTest):
-  def test_create_new_note(self):
+class TestCreateNewNote(OperationTest):
+  def test(self):
     pass
 
-  def test_update_note(self):
+class TestUpdateNote(OperationTest):
+  def test(self):
     pass
 
-  def test_print_list_of_notes(self):
+class TestPrintListOfNotes(OperationTest):
+  def test(self):
     pass
 
 if __name__ == "__main__":
